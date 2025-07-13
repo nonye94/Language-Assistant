@@ -1,0 +1,8 @@
+openai
+streamlit
+gtts
+bcrypt
+gtts
+plotly
+streamlit-audiorecorder
+scikit-learn
