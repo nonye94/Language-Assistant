@@ -128,7 +128,7 @@ def user_dashboard(username):
         fig = px.line(progress_df, x='date_completed', y='Total Lessons', title='Learning Progress Over Time')
         st.plotly_chart(fig, use_container_width=True)
 
-    st.header("📉 Areas Needing Improvement")
+    st.header("Areas Needing Improvement")
     weak_lessons = user_history[user_history['quiz_percentage'] < 60]
 
     if not weak_lessons.empty:
@@ -144,9 +144,9 @@ def user_dashboard(username):
             fig = px.bar(weak_categories, orientation='h', labels={'value': 'Count', 'index': 'Lesson'})
             st.plotly_chart(fig, use_container_width=True)
     else:
-        st.success("🎉 Great job! No weak areas detected based on your threshold.")
+        st.success("Great job! No weak areas detected based on your threshold.")
 
-    st.header("🎯 Recommended Next Lessons")
+    st.header("Recommended Next Lessons")
     if isinstance(recommendations, list) and recommendations[0] != "No new recommendations":
         cols = st.columns(min(3, len(recommendations)))
         for idx, lesson in enumerate(recommendations):
@@ -163,7 +163,7 @@ def user_dashboard(username):
     else:
         st.warning(recommendations[0])
 
-    st.header("🕒 Recent Activity")
+    st.header("Recent Activity")
     st.dataframe(user_history.head(10),
                  column_config={
                      "date_completed": "Date",
