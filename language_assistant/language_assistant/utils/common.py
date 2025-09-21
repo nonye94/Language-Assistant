@@ -28,12 +28,12 @@ from gtts import gTTS
 
 
 def record_and_transcribe():
-    st.header("🎙️ Speak and Learn")
+    st.header("Speak and Learn")
 
     audio_data = audiorecorder("Click once to start recording. Click again to stop", "Recording...")
 
     if audio_data is not None and len(audio_data) > 0:
-        st.success("✅ Recording complete")
+        st.success("Recording complete")
 
         # Export AudioSegment to BytesIO
         audio_buffer = BytesIO()
@@ -42,15 +42,15 @@ def record_and_transcribe():
 
         st.audio(audio_bytes, format="audio/wav")
 
-        if st.button("🧠 Transcribe and Translate"):
+        if st.button("Transcribe and Translate"):
             with st.spinner("Processing your voice..."):
                 # Transcribe using Whisper
                 transcribed_text = transcribe_audio(audio_bytes)
-                st.write("🔤 You said:", transcribed_text)
+                st.write("You said:", transcribed_text)
 
                 # Get response from GPT
                 response = ask_gpt(f"Translate and explain: {transcribed_text}")
-                st.write("🧠 GPT says:")
+                st.write("GPT says:")
                 st.write(response)
                 # Convert GPT response to speech
                 tts = gTTS(response)
