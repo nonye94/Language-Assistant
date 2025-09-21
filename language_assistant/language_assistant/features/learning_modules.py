@@ -18,13 +18,13 @@ def scroll_bottom():
 
 
 def show_learning_modules_interface():
-    st.header("📘 Learning Modules")
+    st.header("Learning Modules")
 
     module = st.selectbox("Choose a module", [
-        "💬 AI Practice Chat",
-        "❓ Vocabulary Quiz",
-        "📝 Fill in the Blanks",
-        "🔤 Grammar"
+        "AI Practice Chat",
+        "Vocabulary Quiz",
+        "Fill in the Blanks",
+        "Grammar"
     ])
 
     # 💬 Chat Module
@@ -40,7 +40,7 @@ def show_learning_modules_interface():
             st.write("💬 AI Tutor:")
             st.write(response)
 
-    elif module == "❓ Vocabulary Quiz":
+    elif module == "Vocabulary Quiz":
         st.header("Vocabulary Quiz")
 
         # Clear previous quiz state if quiz is complete
@@ -111,7 +111,7 @@ def show_learning_modules_interface():
                         del st.session_state.quiz_index
                         del st.session_state.quiz_score
                         st.rerun()
-    elif module == "🔤 Grammar":
+    elif module == "Grammar":
         st.header("Grammar Quiz")
 
         # Clear previous quiz state if quiz is complete
@@ -180,7 +180,7 @@ def show_learning_modules_interface():
                         del st.session_state.quiz_index
                         del st.session_state.quiz_score
                         st.rerun()
-    elif module == "📝 Fill in the Blanks":
+    elif module == "Fill in the Blanks":
         st.subheader("Fill in the Blanks Exercise")
 
         # Clear previous exercise state if exercise is complete
@@ -237,7 +237,7 @@ def show_learning_modules_interface():
             st.session_state.exercise_score = current_score
             # Check if all answers are filled
             if all_filled:
-                st.success("🎉 You've completed the exercise!")
+                st.success("You've completed the exercise!")
                 st.write(f"Your score: {st.session_state.exercise_score}/{len(st.session_state.exercise)}")
 
                 # Calculate time taken if you want to show that
