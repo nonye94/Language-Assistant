@@ -44,25 +44,25 @@ def show_dashboard():
     option = st.sidebar.selectbox(
         "Choose a feature",
         [
-            "🧠 Chat with Assistant", "🗂️ Generate Flashcards", "📆 Review Flashcards",
-            "🎙️ Speak and Learn", "📘 Learning Modules", "📝 Quiz History", "🌟 Recommendation"
+            "Chat with Assistant", "Generate Flashcards", "Review Flashcards",
+            " Speak and Learn", "Learning Modules", "Quiz History", "Recommendation"
         ]
     )
 
     match option:
-        case "🧠 Chat with Assistant":
+        case "Chat with Assistant":
             show_chat_interface()
-        case "🗂️ Generate Flashcards":
+        case "Generate Flashcards":
             show_flashcard_interface()
-        case "📆 Review Flashcards":
+        case "Review Flashcards":
             show_review_flashcard_interface()
-        case "🎙️ Speak and Learn":
+        case "Speak and Learn":
             record_and_transcribe()
-        case "📘 Learning Modules":
+        case "Learning Modules":
             show_learning_modules_interface()
-        case "📝 Quiz History":
+        case "Quiz History":
             get_quiz_history()
-        case "🌟 Recommendation":
+        case "Recommendation":
             user_dashboard(st.session_state.username)
 
 
@@ -77,7 +77,7 @@ def main():
     if not st.session_state.logged_in:
         restore_login_from_cookie()
 
-    st.title("🧠 Language Learning Assistant")
+    st.title("Language Learning Assistant")
 
     if not st.session_state.logged_in:
         tab1, tab2 = st.tabs(["Login", "Register"])
