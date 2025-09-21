@@ -55,14 +55,14 @@ def show_review_flashcard_interface():
 
             col1, col2 = st.columns(2)
             with col1:
-                if st.button("✅ I remembered", key=f"correct_{card_id}"):
+                if st.button("I remembered", key=f"correct_{card_id}"):
                     ease_new, reps_new, interval_new, next_review = sm2(ease, reps, interval, quality=5)
                     update_card_schedule(card_id, ease_new, reps_new, interval_new, next_review)
                     st.session_state.flashcard_feedback = f"Great! Next review in {interval_new} day(s)."
                     st.rerun()
 
             with col2:
-                if st.button("❌ I forgot", key=f"wrong_{card_id}"):
+                if st.button("I forgot", key=f"wrong_{card_id}"):
                     ease_new, reps_new, interval_new, next_review = sm2(ease, reps, interval, quality=2)
                     update_card_schedule(card_id, ease_new, reps_new, interval_new, next_review)
                     st.session_state.flashcard_warning = f"No worries — you’ll see it in {interval_new} day(s). !"
