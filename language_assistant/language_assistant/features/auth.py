@@ -40,7 +40,7 @@ def validate_password(password):
 
 
 def show_register():
-    st.subheader("🆕 Register")
+    st.subheader("Register")
     with st.form("register_form"):
         firstname = st.text_input("Enter your first Name", key="reg_firstname")
         lastname = st.text_input("Enter your last Name", key="reg_lastname")
@@ -67,7 +67,7 @@ def show_register():
 
 
 def show_logout():
-    if st.sidebar.button("🚪 Logout"):
+    if st.sidebar.button("Logout"):
         st.session_state.logged_in = False
         st.session_state.username = ""
         st.success("Logged out!")
