@@ -13,7 +13,7 @@ def show_chat_interface():
     if st.button("Ask"):
         with st.spinner("Thinking..."):
             response = ask_gpt_chat(user_input)
-            st.session_state['response'] = response  # 💾 Save response
+            st.session_state['response'] = response  # Save response
 
     # Only show and speak if there's something stored
     if 'response' in st.session_state:
